@@ -1,83 +1,94 @@
 body{
     width: 1366px;
+    height: 768px;
     margin: 0 auto;
     background: url(../img/background.jpg) no-repeat center top;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
 }
-
-a, p{
+a{
     color: #fff;
 }
-
 .container{
     width: 1067px;
     margin: 0 auto;
 }
-
 /*hero*/
+.header{
+    padding-top: 48px;
+}
+
 .head{
-    margin-top: 48px;
-    display: flex;
-}
-.head-logo{
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    display: none;
-}
-.visual{
-    animation-name: visuali;
-    transition: all 1.5s ease;
     display: block;
 }
-
-@keyframes visuali{
-    0%{
-        opacity: 0.2;
-    }
-    100%{
-        opacity: 1;
-    }
+.head::after{
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    opacity: 0;
+}
+.head-float{
+    display: inline-block;
+    float: left;
+}
+.head-text-logo{
+    display: inline-block;
+    float: left;
+    margin-left: 61px;
+}
+.head-link{
+    width: 46px;
+    height: 44px;
+    position: relative;    
+}
+.logo{
+    position: absolute;
+    transition: all 1s ease;
+    z-index: 2;
+}
+.logo:hover{
+    opacity: 0;
+}
+.logo2{
+    position: absolute;
+    z-index: 1;
 }
 .head-title{
     text-transform: uppercase;
     line-height: 20px;
     font-weight: bold;
     font-size: 29px;
-    transition: all .3s ease;
+    transition: all .5s linear;
 }
 .head-span{
     line-height: 12px;
     font-size: 18px;
 }
-.head-text{
-    float: left;
-    margin-left: 15px;
-}
+.head-title:hover{
+    color:#f26522;   
+ }
 .head-contacts{
-    margin-left: auto;
+    display: inline-block;
     text-align: end;
+    float: right;
 }
-.head-contacts a{
+.head-contacts-link{
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: #fff;
 }
-.color-orange{
-    color:#f26522 ;
-}
 
 /*info*/
-.wrapper{
-    margin-top: 45px;
+
+.validator{
+    display: none;
 }
 
-.wrapp{
-    text-transform: capitalize;
-    float: left;
-    text-align: center;
-    font-size: 18px;
+.wrapper{
+    padding-top: 45px;
 }
 
 .wrapper::after{
@@ -86,6 +97,13 @@ a, p{
     clear: both;
     height: 0;
     opacity: 0;
+}
+
+.wrapp{
+    text-transform: capitalize;
+    float: left;
+    text-align: center;
+    font-size: 18px;
 }
 
 .wrapp-info{
@@ -97,9 +115,7 @@ a, p{
     margin-bottom: 22px;
     box-shadow: 0 0 30px #000;
 }
-.wrapp-text{
-    transition: all .5s ease;
-}
+
 .wrapp:nth-child(1){
     margin-right: 65px;  
     margin-bottom: 50px;    
@@ -130,11 +146,24 @@ a, p{
     width: 307px;
     height: 200px;
 }
+
+.wrapp-text{
+    transition: all .5s ease;
+}
+
+.wrapp-text:hover{
+    color:#f26522;  
+}
+
+.wrapp-info:hover:nth-child(2){
+    display: block;
+}
+
 .wrapp-div{
+    opacity: 0;
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    display: none;
     height: 62px;
     background: #f26522;
     position: absolute;
@@ -143,24 +172,37 @@ a, p{
     width: 307px;
     animation-name: none;
 }
-.active{
-    display: flex;
+.wrapp-info:hover>.wrapp-div{
+    animation-name: invize;
 }
 
-.animated{ 
-    animation-name: animated123; 
+@keyframes invize{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);         
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 .wrapp-div-text{
+    text-align: left;
     width: 46px;
     font-size: 10px;
     padding: 15px 20px;
+    float: left;
 }
 .wrapp-div-price{
+    text-align: left;
+    display: inline-block;
     font-size: 20px;
 }
 .wrapp-div-link{
-display: flex;
-align-items: flex-end;
+    float: right;
+    display: inline-block;
+    padding-top: 26px;
 }
 .wrapp-div-next{
     font-size: 14px;
@@ -170,28 +212,16 @@ align-items: flex-end;
     opacity: 0.5;
 }
 
-@keyframes animated123{
-    0%{
-        opacity: 0;
-        transform: translateY(50px);        
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);          
-    }
-}
 
-.validator{
-    display: none;
-}
 /*footer*/
 
-.footer{
+ .footer{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .footer-text{
+    text-transform: capitalize;
     padding: 22px 0;
     font-size: 12px;
 }
