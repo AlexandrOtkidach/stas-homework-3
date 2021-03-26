@@ -39,18 +39,20 @@ a{
     margin-left: 61px;
 }
 .head-link{
-    width: 46px;
-    height: 44px;
     position: relative;    
 }
 .logo{
     position: absolute;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     z-index: 2;
 }
-.logo:hover{
+.head-link:hover>:nth-child(1)>.logo{
     opacity: 0;
 }
+.head-link:hover>:nth-child(2)>.head-title{
+    color:#f26522;       
+}
+
 .logo2{
     position: absolute;
     z-index: 1;
@@ -60,15 +62,13 @@ a{
     line-height: 20px;
     font-weight: bold;
     font-size: 29px;
-    transition: all .5s linear;
+    transition: all .3s linear;
 }
 .head-span{
     line-height: 12px;
     font-size: 18px;
 }
-.head-title:hover{
-    color:#f26522;   
- }
+
 .head-contacts{
     display: inline-block;
     text-align: end;
@@ -104,18 +104,21 @@ a{
     float: left;
     text-align: center;
     font-size: 18px;
-}
 
+
+    position: relative;
+    z-index: 3;
+}
 .wrapp-info{
     padding: 1rem;
     position: relative;
+    z-index: 1;
     padding: 2px;
     border: 2px ;
     background: linear-gradient( to top, black, white);
     margin-bottom: 22px;
     box-shadow: 0 0 30px #000;
 }
-
 .wrapp:nth-child(1){
     margin-right: 65px;  
     margin-bottom: 50px;    
@@ -124,6 +127,10 @@ a{
     margin-right: 65px; 
     margin-bottom: 50px;     
 }
+.layer1{
+
+}
+
 .layer2{
     width: 307px;
 }
@@ -150,38 +157,44 @@ a{
 .wrapp-text{
     transition: all .5s ease;
 }
-
-.wrapp-text:hover{
-    color:#f26522;  
-}
-
 .wrapp-info:hover:nth-child(2){
     display: block;
 }
 
 .wrapp-div{
     opacity: 0;
-    animation-duration: 1s;
+    z-index: 2;
+    /* height: 0;
+    float: left; */
+    height: 62px;
+    /* top: 140px; */
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    height: 62px;
     background: #f26522;
     position: absolute;
-    top: 140px;  
     justify-content: space-between; 
     width: 307px;
+    transition: all 0.5s linear;
     animation-name: none;
 }
-.wrapp-info:hover>.wrapp-div{
+.wrapp:hover>:nth-child(1)>:nth-child(1)>.wrapp-div{
+    top: 140px;
     animation-name: invize;
 }
+.wrapp:hover>:nth-child(2){
+    color: #f26522;
+}
+/* .wrapp-info:hover> */
 
 @keyframes invize{
     0%{
+        z-index: 2;
         opacity: 0;
         transform: translateY(50px);         
     }
     100%{
+        z-index: 2;
         opacity: 1;
         transform: translateY(0);
     }
@@ -202,13 +215,13 @@ a{
 .wrapp-div-link{
     float: right;
     display: inline-block;
-    padding-top: 26px;
+    margin-top: 26px;
 }
-.wrapp-div-next{
+.wrapp-div-next::after{
+    content: " › ";
     font-size: 14px;
-    padding: 17px;        
-}
-.wrapp-div-next-span{
+    margin-right: 17px;
+    /* padding: 17px;  */
     opacity: 0.5;
 }
 
