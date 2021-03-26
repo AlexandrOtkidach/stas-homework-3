@@ -58,6 +58,8 @@ a{
     z-index: 1;
 }
 .head-title{
+    word-wrap: break-word;
+    width: 110px;
     text-transform: uppercase;
     line-height: 20px;
     font-weight: bold;
@@ -110,15 +112,19 @@ a{
     z-index: 3;
 }
 .wrapp-info{
-    padding: 1rem;
-    position: relative;
-    z-index: 1;
+    /* padding: 1rem; */
     padding: 2px;
     border: 2px ;
     background: linear-gradient( to top, black, white);
     margin-bottom: 22px;
     box-shadow: 0 0 30px #000;
 }
+.wrapp-info2{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
 .wrapp:nth-child(1){
     margin-right: 65px;  
     margin-bottom: 50px;    
@@ -127,10 +133,6 @@ a{
     margin-right: 65px; 
     margin-bottom: 50px;     
 }
-.layer1{
-
-}
-
 .layer2{
     width: 307px;
 }
@@ -155,19 +157,12 @@ a{
 }
 
 .wrapp-text{
-    transition: all .5s ease;
-}
-.wrapp-info:hover:nth-child(2){
-    display: block;
+    transition: all .3s ease;
 }
 
 .wrapp-div{
-    opacity: 0;
     z-index: 2;
-    /* height: 0;
-    float: left; */
     height: 62px;
-    /* top: 140px; */
     animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -178,7 +173,7 @@ a{
     transition: all 0.5s linear;
     animation-name: none;
 }
-.wrapp:hover>:nth-child(1)>:nth-child(1)>.wrapp-div{
+.wrapp:hover>:nth-child(1)>:nth-child(1)>:nth-child(1)>.wrapp-div{
     top: 140px;
     animation-name: invize;
 }
@@ -189,13 +184,9 @@ a{
 
 @keyframes invize{
     0%{
-        z-index: 2;
-        opacity: 0;
         transform: translateY(50px);         
     }
     100%{
-        z-index: 2;
-        opacity: 1;
         transform: translateY(0);
     }
 }
