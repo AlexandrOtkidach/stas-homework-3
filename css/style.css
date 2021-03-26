@@ -33,6 +33,12 @@ a{
     display: inline-block;
     float: left;
 }
+.head-logo{
+    width: 180px;
+    height: 45px;
+    float: left;
+}
+
 .head-text-logo{
     display: inline-block;
     float: left;
@@ -51,6 +57,7 @@ a{
 }
 .head-link:hover>:nth-child(2)>.head-title{
     color:#f26522;       
+    
 }
 
 .logo2{
@@ -116,7 +123,6 @@ a{
     padding: 2px;
     border: 2px ;
     background: linear-gradient( to top, black, white);
-    margin-bottom: 22px;
     box-shadow: 0 0 30px #000;
 }
 .wrapp-info2{
@@ -141,11 +147,9 @@ a{
 }
 .wrapp:nth-child(4){
     margin-right: 65px;  
-    margin-bottom: 30px; 
 }
 .wrapp:nth-child(5){
     margin-right: 65px; 
-    margin-bottom: 30px; 
 }
 .layer5{
     width: 307px;
@@ -157,6 +161,8 @@ a{
 }
 
 .wrapp-text{
+    display: block;
+    margin: 20px 40px;
     transition: all .3s ease;
 }
 
@@ -190,7 +196,10 @@ a{
         transform: translateY(0);
     }
 }
-
+.wrapp-info-link{
+    display: block;
+    height: 200px;
+}
 .wrapp-div-text{
     text-align: left;
     width: 46px;
