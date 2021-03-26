@@ -34,8 +34,7 @@ a{
     float: left;
 }
 .head-logo{
-    width: 180px;
-    height: 45px;
+
     float: left;
 }
 
@@ -45,6 +44,9 @@ a{
     margin-left: 61px;
 }
 .head-link{
+    display: block;
+    width: 180px;
+    height: 45px;
     position: relative;    
 }
 .logo{
